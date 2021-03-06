@@ -13,8 +13,18 @@ export class CalculatorComponent implements OnInit {
   }
   input:string = '';
   result:string = '';
+  keyboardInput: string = '';
+  keyboardInputNum = /[0-9]/;
   
- 
+  onKey(event: any) {
+    this.keyboardInput = event.key;
+    if(this.keyboardInputNum.test(this.keyboardInput)){
+      this.pressNum(event.key);
+    console.log(event)
+    }
+
+  }
+
   pressNum(num: string) {
     
     //If decimal point was pressed more than once

@@ -1,4 +1,4 @@
-<div class="calc">
+<div class="calc" (keydown)="onKey($event)" (keydown.end)="clear()" (keydown.delete)="allClear()">
     <div class="header">
         <div class="titles">
             Simple Calculator
